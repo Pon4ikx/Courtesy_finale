@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Адреса | Courtesy{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script src="{% static 'js/map_script.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/addresses.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link rel="stylesheet" href="{% static 'css/other.css' %}">
+
+<div class="container">
+    <div class="breadcrumb-container">
+        <nav class="breadcrumb">
+            <a href="/"><b>Главная</b></a> &gt; <span><b>Адреса</b></span>
+        </nav>
+    </div>
+</div>
+
+<div class="addresses-container">
+    <!-- Список адресов -->
+    <div class="address-list">
+        <h2>Наши адреса</h2>
+        <ul>
+            {% for address in addresses %}
+            <li>
+                <strong>{{ address.address }}</strong><br>
+                Время работы: {{ address.working_hours|default:"Не указано" }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Карта -->
+    <div id="map" class="map" style="height: 500px; width: 100%;"></div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+
+.breadcrumb {
+    font-size: 16px;
+    margin: 20px 0;
+
+    font-family: 'Arial', sans-serif;
+    display: flex;
+
+    align-items: center;
+
+}
+
+.container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 15px;
+
+}
+
+.breadcrumb a {
+    color: #5EAEA7;
+
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 5px;
+
+}
+
+.breadcrumb a:hover {
+    text-decoration: none;
+
+}
+
+.breadcrumb span {
+    color: #333;
+}
+
+
+.breadcrumb-container {
+    display: flex;
+    justify-content: flex-start;
+
+    align-items: center;
+
+    margin-bottom: 5px;
+
+    max-width: 1200px;
+    width: 100%;
+
+}

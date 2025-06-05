@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+    {% load static %}
+    <link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Логотип -->
+            <div class="logo">
+                <a href="/"><img src="{% static 'images/logo.png' %}" alt="Логотип"></a>
+                <span>Courtesy</span>
+            </div>
+
+            <!-- Поисковая строка -->
+            <div class="search-container" style="position: relative;">
+                <form action="{% url 'global_search' %}" method="get" id="search-form">
+                    <input type="text" name="q" placeholder="Введите запрос" class="search-input" required
+                           autocomplete="off" id="search-input">
+                    <button type="submit" class="search-button">
+                        <img src="{% static 'images/search-icon.png' %}" alt="Искать">
+                    </button>
+                </form>
+                <div class="live-search-results" id="live-results"></div>
+            </div>
+
+
+            <!-- Навигация -->
+            <nav>
+                <div class="burger-menu">
+
+                    <a href="#" class="burger-toggle">О нас<span class="arrow">&#9660;</span></a>
+                    <div class="burger-links">
+                        <a href="/about">О нашей клинике</a>
+                        <a href="/addresses">Адреса</a>
+                        <a href="/contacts">Контакты</a>
+                        <a href="/doctors">Наши специалисты</a>
+                        <a href="/news">Новости</a>
+                        <a href="/reviews">Отзывы</a>
+                    </div>
+                </div>
+                <a href="/services">Услуги и цены</a>
+                <a href="/doctors">Врачи</a>
+                <a href="/news">Новости</a>
+                <a href="/contacts">Контакты</a>
+            </nav>
+
+
+            <!-- Иконка профиля -->
+            <div class="profile-icon">
+                <a href="/personal">
+                    <img src="{% static 'images/profile-icon.png' %}" alt="Профиль">
+                </a>
+                <span><a href="/personal" class="profile-label">Личный кабинет</a></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1>{% block header %}{% endblock header %}</h1>
+        <div>{% block content%}{% endblock content %}</div>
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Контакты -->
+            <div class="footer-contacts">
+                <p>Контакты:</p>
+                <p>+375 XXX XXX XX</p>
+                <p>+375 XXX XXX XX</p>
+            </div>
+
+            <!-- Адреса -->
+            <div class="footer-addresses">
+                <p>Наши адреса:</p>
+                <p>Ул. xxxxxxxxx</p>
+                <p>Ул. xxxxxxxxx</p>
+            </div>
+
+            <!-- Социальные сети -->
+            <div class="footer-socials">
+                <a href="https://web.telegram.org/a/" class="social-icon">
+                    <img src="{% static 'images/telegram-icon.png' %}" alt="Telegram">
+                </a>
+                <a href="https://www.youtube.com" class="social-icon">
+                    <img src="{% static 'images/youtube-icon.png' %}" alt="YouTube">
+                </a>
+                <a href="https://ru-ru.facebook.com/login" class="social-icon">
+                    <img src="{% static 'images/facebook-icon.png' %}" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    {% if user.is_authenticated and user.is_staff %}
+    <button id="adminPanelBtn" title="Админ-панель" onclick="location.href='/admin/'">⚙</button>
+    {% endif %}
+
+
+
+    <button id="scrollToTopBtn" title="Наверх">&#9650;</button> <!-- ▲ Unicode U+25B2 -->
+
+    <script src="{% static 'js/scroll_button.js' %}"></script>
+    <script src="{% static 'js/burger.js' %}"></script>
+    <script src="{% static 'js/search.js' %}"></script>
+</body>
+
+</html>

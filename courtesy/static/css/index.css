@@ -1,0 +1,261 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+
+.divider {
+    max-width: 1200px;
+    height: 5px;
+    background-color: #5eaea6;
+    margin: 40px auto;
+}
+
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #d3ffe9;
+}
+
+.hero-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.hero-text .button {
+    background-color: #ffa9a9;
+    color: #333;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.hero-text .button:hover {
+    background-color: #36a594;
+    color: white;
+}
+
+.hero-image {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.hero-image img {
+    margin-left: 100px;
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.advantages {
+    padding: 40px 20px;
+    background-color: #d2fffa;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advantages h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.advantages ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    align-items: center;
+}
+
+.advantages li {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+
+
+
+.staff {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.staff h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.staff-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.staff-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.staff-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.staff-info {
+    text-align: center;
+}
+
+.staff-member h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.staff-member p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+.latest-news {
+    background-color: #d2fffa;
+    padding: 40px 20px;
+    margin-top: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.latest-news h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.latest-news ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.latest-news .news-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.latest-news .news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.latest-news .news-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.latest-news .news-content {
+    padding: 15px;
+}
+
+.latest-news .news-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.latest-news .news-content p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.latest-news .news-content .date {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.latest-news .news-content .read-more {
+    font-size: 14px;
+    color: #43b5a0;
+    text-decoration: none;
+}
+
+.latest-news .new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5050;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
